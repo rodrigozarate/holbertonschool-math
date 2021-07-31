@@ -8,9 +8,9 @@
 #include <math.h>
 
 /**
-* modulus - return the modulus
+* argument - return the argument
 * @c: structure complex
-* Return: c
+* Return: double a
 */
 
 double argument(complex c)
