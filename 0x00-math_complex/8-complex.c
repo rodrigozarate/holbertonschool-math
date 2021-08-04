@@ -29,7 +29,7 @@ double a;
 /* re part */
 double b;
 
-a = sen(arg) * m;
+a = sin(arg) * m;
 b = cos(arg) * m;
 
 c3->re = b;
