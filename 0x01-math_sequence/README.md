@@ -41,4 +41,4 @@ Code the Fibonacci sequence until having a geometric behavior. How can we deduce
 The Mandelbrot’s set is the set of complex numbers c for which the function does not diverge when iterated from . If we assume that the sequence diverges if it becomes greater then 2.
 
 Code the Mandelbrot’s set in a PGM file with a recurrent sequence:
-![Image alt](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2021/4/5ec2019a85411e37880ff30dfb3b341675ffd891.png)
+![Mandelbrot’s set](https://en.wikipedia.org/wiki/Mandelbrot_set#/media/File:Mandel_zoom_00_mandelbrot_set.jpg)
