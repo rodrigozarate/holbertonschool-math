@@ -35,6 +35,7 @@ Code the Fibonacci sequence until having a geometric behavior. How can we deduce
     You can use the library <math.h> in your code
 
 #### File: 1-fibonacci.c
+![Fibonacci](https://media.geeksforgeeks.org/wp-content/cdn-uploads/fibonacci-sequence.png)
 
 ### 2. Mandelbrot’s Sets
 
@@ -42,3 +43,12 @@ The Mandelbrot’s set is the set of complex numbers c for which the function do
 
 Code the Mandelbrot’s set in a PGM file with a recurrent sequence:
 ![Mandelbrot's set](https://www.researchgate.net/profile/John-Hubbard-6/publication/228540477/figure/fig1/AS:669410264088623@1536611252979/The-Mandelbrot-set-M-The-two-main-conjectures-are-the-following-MLC-The-set-M-is.png)
+
+### 3. Julia’s Sets
+
+Code the Julia’s Set in a PGM file with a recurrent sequence:
+#### File: julia.c
+![Julia](https://mathpng.com/wp-content/uploads/2021/07/gren_13.png)
+#### Why I'm here
+Don't know...
+
