@@ -20,7 +20,7 @@ void display_complex_number(complex c)
 		else if (c.im == 0)
 			printf("0\n");
 		else
-			printf("%.9g\n", c.im);
+			printf("%.9gi\n", c.im);
 	}
 	else
 	{
