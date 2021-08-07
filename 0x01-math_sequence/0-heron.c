@@ -15,6 +15,9 @@ t_cell *heron(double p, double x0)
 {
 /* recieve params */
 /* create list */
+struct t_cell{
+double elt;
+} t_cell;
 /* do the math */
 /* iterate over value */
 /* value = 1/2 * ((u->n) + b/(u->n)) */
