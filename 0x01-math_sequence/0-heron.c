@@ -21,7 +21,7 @@ if (newnode == NULL)
 		return (NULL);
 	}
 newnode->next = NULL;
-printf("ss %lf ss", newnode->elt);
+newnode->elt = 74;
 return (newnode);
 }
 
@@ -32,17 +32,25 @@ return (newnode);
 * Return: node
 */
 
-t_cell *add_node(t_cell *p, double v)
+t_cell *add_node(t_cell **p, double v)
 {
 t_cell *tempnode;
-/* tempnode = create_node(); */
-tempnode = p;
-printf("%p p node\n", &p);
-printf("%p tempnode\n", &tempnode);
+tempnode = malloc(sizeof(t_cell));
+
 tempnode->elt = v;
-printf("%lf tempnode\n", tempnode->elt);
-tempnode->next = p;
-*p = *tempnode;
+	if (p[0]->elt == 74)
+	{
+		tempnode->next = NULL;
+		printf("firstnode\n");
+	/*	free(p); */
+	}
+	else
+	{
+		tempnode->next = *p;
+		printf("others\n");
+	}
+
+*p = tempnode;
 return (tempnode);
 }
 
@@ -57,24 +65,22 @@ t_cell *heron(double v)
 {
 t_cell *thenode, *list;
 double i = 0;
-/* double value = 5; */
 /* double comp = sqr(p); */
 
 /* do the math */
-/* iterate over value */
-printf("%f k\n", v);
+
 /* create node */
 thenode = create_node();
-while (i < v)
-{
-/* value = 0.5 * (x0 + (p/x0)) */
-/* Populate node list */
-/* thenode = create_node(); */
-printf("%p thenode %lf\n", &thenode, v);
-list = add_node(thenode, v);
-/* printf("%p list\n", &list); */
-v--;
-}
+
+/* iterate over value */
+	for (;i < v; v--)
+	{
+	/* value = 0.5 * (x0 + (p/x0)) */
+	/* Populate node list */
+
+		list = add_node(&thenode, v);
+
+	}
 /* Return list */
 return (list);
 }
