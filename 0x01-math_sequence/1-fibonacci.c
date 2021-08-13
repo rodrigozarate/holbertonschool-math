@@ -13,51 +13,68 @@
 
 t_cell *Fibonnaci()
 {
-/* first two numbers in sequence are 1 and 1 */
-/* Like a seed */
-/* then add the two numbers to get the next */
-/* put a limit by the gold number */
 double goldn = 1.618034;
-double togold = 0;
+double togold = 2;
+int mflag = 1;
+double oper;
+double diff = 0.000001;
 t_cell *prevnode;
 t_cell *preprevnode;
 t_cell *tempnode;
+t_cell *fibon;
 
-	t_cell fibon = {1, NULL};
-printf("here 7");
-preprevnode = &fibon;
-printf("here 8");
+fibon = malloc(sizeof(t_cell));
+	if (fibon == NULL)
+		free(fibon);
+fibon->elt = 1;
+fibon->next = NULL;
+
+preprevnode = fibon;
+prevnode = fibon;
 tempnode = malloc(sizeof(t_cell));
 	if (tempnode == NULL)
 		free(tempnode);
 tempnode->elt = 1;
-printf("here 8.5");
 tempnode->next = preprevnode;
-printf("here 9");
+/* assign new head */
 preprevnode = tempnode;
-printf("here 10");
-/* prevnode = preprevnode->next; */
 
-printf("here 3");
 /* check if is gold */
-	while (togold != goldn)
+	while (mflag)
 	{
+		printf("ladif: %lf diff: %lf\n", (togold - goldn), diff);
+
 		tempnode = malloc(sizeof(t_cell));
 			if (tempnode == NULL)
 				free(tempnode);
-printf("here 11");
-		tempnode->elt = preprevnode->elt + preprevnode->next->elt;
-		printf("%d ", tempnode->elt); 
-	/* advance nodes */
-	preprevnode = preprevnode->next;
-printf("here 12");
-	prevnode = preprevnode->next->next;
-printf("here 13");
-	togold = preprevnode->next->elt / preprevnode->elt;
-	printf("togold %lf\n", togold);
+		/* math */
+		tempnode->elt = preprevnode->elt + prevnode->elt;
+
+		/* assign nodes */
+		tempnode->next = preprevnode;
+
+		/* magic */
+		prevnode = preprevnode;
+		preprevnode = tempnode;
+
+		togold = (double) preprevnode->elt / prevnode->elt;
+	
+		/* more magic */
+		if (togold > goldn)
+		{
+			oper = togold - goldn;
+		}
+		else
+		{
+			oper = goldn - togold;
+		}
+		
+		printf("oper %lf\n", oper);
+		if (oper <= diff)
+		{
+			mflag = 0;
+		}
 	}
-
-
 return (preprevnode);
 }
 
@@ -68,7 +85,7 @@ return (preprevnode);
 */
 double gold_number(t_cell *head)
 {
-double thegold = 1.456;
+double thegold = 1.618034;
 t_cell *a = head;
 a = NULL;
 /* receive a SLL divide the last number with the previous */
