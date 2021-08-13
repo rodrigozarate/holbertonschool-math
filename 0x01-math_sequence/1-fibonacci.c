@@ -16,19 +16,14 @@ t_cell *Fibonnaci()
 double goldn = 1.618034;
 double togold = 2;
 int mflag = 1;
-double oper;
-double diff = 0.00000001;
-t_cell *prevnode;
-t_cell *preprevnode;
-t_cell *tempnode;
-t_cell *fibon;
+double diff = 0.00000001, oper;
+t_cell *prevnode, *preprevnode, *tempnode, *fibon;
 
 fibon = malloc(sizeof(t_cell));
 	if (fibon == NULL)
 		free(fibon);
 fibon->elt = 1;
 fibon->next = NULL;
-
 preprevnode = fibon;
 prevnode = fibon;
 tempnode = malloc(sizeof(t_cell));
@@ -37,27 +32,21 @@ tempnode = malloc(sizeof(t_cell));
 tempnode->elt = 1;
 tempnode->next = preprevnode;
 preprevnode = tempnode;
-
 	while (mflag)
 	{
 		tempnode = malloc(sizeof(t_cell));
 			if (tempnode == NULL)
 				free(tempnode);
-
 		tempnode->elt = preprevnode->elt + prevnode->elt;
 		tempnode->next = preprevnode;
 		prevnode = preprevnode;
 		preprevnode = tempnode;
 		togold = (double) preprevnode->elt / prevnode->elt;
 			if (togold > goldn)
-			{
 				oper = togold - goldn;
-			}
 			else
-			{
 				oper = goldn - togold;
-			}
-	
+
 			if (oper <= diff)
 				mflag = 0;
 	}
