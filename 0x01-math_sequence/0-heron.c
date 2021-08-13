@@ -45,7 +45,7 @@ tempnode = *tpt;
 return (tempnode);
 }
 
-/*
+/**
 * heron - Return Heron secuence
 * @p: double
 * @x0: double
