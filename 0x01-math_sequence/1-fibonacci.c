@@ -78,10 +78,7 @@ t_cell *b;
 a = head;
 head = head->next;
 b = head;
-printf("elt 1: %d\n", a->elt);
-printf("elt 2: %d\n", b->elt);
 thediv = (double) a->elt / b->elt;
-printf("div: %lf\n", thediv);
 /* Thats it */
 return (thediv);
 }
