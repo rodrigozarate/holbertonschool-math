@@ -39,13 +39,13 @@ tempnode = *tpt;
 	tempnode->elt = v;
 	tempnode->next = *tpt;
 	}
-/*pointer set to new node adress */
+/* pointer set to new node adress */
 *tpt = tempnode;
 
 return (tempnode);
 }
 
-/**
+/*
 * heron - Return Heron secuence
 * @p: double
 * @x0: double
