@@ -17,7 +17,7 @@ double goldn = 1.618034;
 double togold = 2;
 int mflag = 1;
 double oper;
-double diff = 0.000001;
+double diff = 0.00000001;
 t_cell *prevnode;
 t_cell *preprevnode;
 t_cell *tempnode;
@@ -36,44 +36,30 @@ tempnode = malloc(sizeof(t_cell));
 		free(tempnode);
 tempnode->elt = 1;
 tempnode->next = preprevnode;
-/* assign new head */
 preprevnode = tempnode;
 
-/* check if is gold */
 	while (mflag)
 	{
-		printf("ladif: %lf diff: %lf\n", (togold - goldn), diff);
-
 		tempnode = malloc(sizeof(t_cell));
 			if (tempnode == NULL)
 				free(tempnode);
-		/* math */
+
 		tempnode->elt = preprevnode->elt + prevnode->elt;
-
-		/* assign nodes */
 		tempnode->next = preprevnode;
-
-		/* magic */
 		prevnode = preprevnode;
 		preprevnode = tempnode;
-
 		togold = (double) preprevnode->elt / prevnode->elt;
+			if (togold > goldn)
+			{
+				oper = togold - goldn;
+			}
+			else
+			{
+				oper = goldn - togold;
+			}
 	
-		/* more magic */
-		if (togold > goldn)
-		{
-			oper = togold - goldn;
-		}
-		else
-		{
-			oper = goldn - togold;
-		}
-		
-		printf("oper %lf\n", oper);
-		if (oper <= diff)
-		{
-			mflag = 0;
-		}
+			if (oper <= diff)
+				mflag = 0;
 	}
 return (preprevnode);
 }
@@ -85,10 +71,17 @@ return (preprevnode);
 */
 double gold_number(t_cell *head)
 {
-double thegold = 1.618034;
-t_cell *a = head;
-a = NULL;
+double thediv;
+t_cell *a;
+t_cell *b;
 /* receive a SLL divide the last number with the previous */
+a = head;
+head = head->next;
+b = head;
+printf("elt 1: %d\n", a->elt);
+printf("elt 2: %d\n", b->elt);
+thediv = (double) a->elt / b->elt;
+printf("div: %lf\n", thediv);
 /* Thats it */
-return (thegold);
+return (thediv);
 }
