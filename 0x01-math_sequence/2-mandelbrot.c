@@ -15,18 +15,19 @@
 * mandelbrot - do the mandel bro
 */
 
-int mandelbrot()
+int mandelbrot(void)
 {
 /* create the secuence */
 /* limits */
-int A, B, i;
+int A, B, i, z = 100;
 int w, h;
 double a, b, x, y, r;
 /* size of image by 4 */
-double n = 100;
-w = n * 4, h = n * 4;
-printf("Holberton School - Mandelbrot's set \n");
-FILE* pgmimg;
+double n = 99.9;
+w = z * 4, h = z * 4;
+printf("Holberton School\n");
+printf("Mandelbrot's set image created in mandelbrot.pgm file\n");
+FILE *pgmimg;
 pgmimg = fopen("mandelbrot.pgm", "wb");
 fprintf(pgmimg, "P2\n");
 fprintf(pgmimg, "%d %d\n", w, h);
@@ -54,15 +55,21 @@ for (B = 0; B <= 4 * n; B++)
 		/* future i to scale or color */
 		}
 		if (i == 1025)
+		{
 			fprintf(pgmimg, "255 ");
+			printf(" ");
+		}
 		else
-			fprintf(pgmimg, "16 ");
-
+		{
+			fprintf(pgmimg, "20 ");
+			printf(".");
+		}
 	}
-	fprintf(pgmimg, "\n");
+fprintf(pgmimg, "\n");
+printf("\n");
 }
 
 /* output the PGM file */
-	fclose(pgmimg);
+fclose(pgmimg);
 return (0);
 }
