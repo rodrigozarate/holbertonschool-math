@@ -86,11 +86,11 @@ complex z0, z1;
 FILE *pgmimg;
 
 printf("Holberton School\n");
-printf("Julia's set image created in julia.pgm file\n");
-printf("Test: ./julia 800 800 0 0 1.4 60 for circle");
-printf("Test: ./julia 800 800 -0.50 0.55 1.4 60 for tardigrade like");
-printf("Test: ./julia 1200 1200 -0.646 0.408 1.3 100 for Unespected beauty");
-printf("Test: ./julia 1200 1200 -0.70 0.26 1.3 100 for More beauty");
+printf("Julia's set image created in julia.pgm file\n\n");
+printf("Test: ./julia 800 800 0 0 1.4 60 for circle\n");
+printf("Test: ./julia 800 800 -0.50 0.55 1.4 60 for tardigrade like\n");
+printf("Test: ./julia 1200 1200 -0.646 0.408 1.3 100 for Unespected beauty\n");
+printf("Test: ./julia 1200 1200 -0.70 0.26 1.3 100 for More beauty\n");
 pgmimg = fopen("julia.pgm", "wb");
 fprintf(pgmimg, "P2 \n");
 fprintf(pgmimg, "%d %d \n", width, height);
