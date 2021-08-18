@@ -87,6 +87,10 @@ FILE *pgmimg;
 
 printf("Holberton School\n");
 printf("Julia's set image created in julia.pgm file\n");
+printf("Test: ./julia 800 800 0 0 1.4 60 for circle");
+printf("Test: ./julia 800 800 -0.50 0.55 1.4 60 for tardigrade like");
+printf("Test: ./julia 1200 1200 -0.646 0.408 1.3 100 for Unespected beauty");
+printf("Test: ./julia 1200 1200 -0.70 0.26 1.3 100 for More beauty");
 pgmimg = fopen("julia.pgm", "wb");
 fprintf(pgmimg, "P2 \n");
 fprintf(pgmimg, "%d %d \n", width, height);
@@ -96,25 +100,19 @@ fprintf(pgmimg, "255 \n");
 	{
 		for (y = 0; y < height; y++)
 		{
-		/* matrix */
 		z0 = drawp(width, height, radius, x, y);
-			/* test cases */
 			for (i = 1; i <= n; i++)
 			{
-				/* test case converge */
 				z1 = add(sqr(z0), c);
 				if (modulus(z1) > radius)
 				{
-					/* inside set */
 					fprintf(pgmimg, " 16 ");
 					break;
 				}
 				z0 = z1;
 			}
-			/* reached the end of test cases */
 			if (i > n)
 			{
-				/* out of set */
 				fprintf(pgmimg, " 255 ");
 			}
 		}
