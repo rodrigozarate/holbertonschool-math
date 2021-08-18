@@ -17,7 +17,7 @@ int A, B, i, z = 100;
 int w, h;
 double a, b, x, y, r;
 /* skew */
-double n = 99.9;
+double n = 100;
 /* size of image by 4 */
 FILE *pgmimg;
 w = z * 4, h = z * 4;
@@ -28,10 +28,10 @@ pgmimg = fopen("mandelbrot.pgm", "wb");
 fprintf(pgmimg, "P2\n");
 fprintf(pgmimg, "%d %d\n", w, h);
 fprintf(pgmimg, "255\n");
-for (B = 0; B <= 4 * n; B++)
+for (B = 0; B < 4 * n; B++)
 {
 	b = 2 - (B / n);
-	for (A = 0; A <= 4 * n; A++)
+	for (A = 0; A < 4 * n; A++)
 	{
 		a = -2 + (A / n);
 		x = 0;
