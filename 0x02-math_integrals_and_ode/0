@@ -1,0 +1,18 @@
+/*
+* 0 - ODE method
+* Author: Rodrigo Zárate Algecira
+* Date: August 21, 2021
+*/
+
+/**
+* euler_method - euler_method
+* @a: double
+* @b: double
+* @steps: int
+* Return: double
+*/
+
+double euler_method(double a, double b, int steps)
+{
+/* aprox */
+}
