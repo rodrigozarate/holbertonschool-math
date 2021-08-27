@@ -15,7 +15,7 @@
 * Return: double
 */
 
-double rectangle_method(double a, double b, int steps )
+double rectangle_method(double a, double b, int steps)
 {
 /* aprox */
 /* b - a / steps = width of rectangle */
