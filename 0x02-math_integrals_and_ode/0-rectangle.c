@@ -4,6 +4,9 @@
 * Date: August 21, 2021
 */
 
+#include <stdio.h>
+#include <math.h>
+
 /**
 * rectangle_method - rectangle_method
 * @a: double
@@ -25,14 +28,23 @@ double rectangle_method(double a, double b, int steps )
 /* create a sum of all areas */
 /* dx = b - a */
 /* 1 + x^2 */
+/* atan */
 
 int i;
-int width = (b - a) / steps;
-double sum = 0;
+double width, sum;
+
+/* steps = 5; */
+width = (b - a) / steps;
+sum = 0.0;
+
+printf("a: %lf \n", a);
+printf("b: %lf \n", b);
+printf("width: %lf \n", width);
 
 	for (i = 1; i <= steps; i++)
 	{
-		sum += width * (function(a + (i - 1) * width));
+		sum += width * (atan(a + (i - 1) * width));
+		/* printf("sum: %lf \n", sum); */
 	}
 
 return (sum);
