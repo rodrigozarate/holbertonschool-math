@@ -26,9 +26,9 @@ double rectangle_method(double a, double b, int steps)
 /* height-n = f(a + (i-1) * width) next cases */
 /* area = width * (f(a + (i - 1) * width)) */
 /* create a sum of all areas */
-/* dx = b - a */
 /* 1 + x^2 */
 /* atan */
+/* (1 / 1 + x^2) dx = arctan(x) */
 
 int i;
 double width, sum;
@@ -37,14 +37,9 @@ double width, sum;
 width = (b - a) / steps;
 sum = 0.0;
 
-printf("a: %lf \n", a);
-printf("b: %lf \n", b);
-printf("width: %lf \n", width);
-
 	for (i = 1; i <= steps; i++)
 	{
-		sum += width * (atan(a + (i - 1) * width));
-		/* printf("sum: %lf \n", sum); */
+		sum += ((1 / (1 + (width * width))) * atan(a - 1)) * width * -1;
 	}
 
 return (sum);
