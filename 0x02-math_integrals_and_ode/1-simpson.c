@@ -5,6 +5,8 @@
 */
 
 #define f(x) (1 / (1 + x * x))
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
 * simpson - simpson_method
@@ -16,46 +18,39 @@
 
 double simpson(double a, double b, int steps)
 {
-double sum;
+double sum, h, width;
 int i;
 
 sum = 0.0;
 width = (b - a) / steps;
-/* 1 - 4 - 1 */
-/* 1 - 4 - 2 - 4 - 2 - 1 */
-/* check that steps is even */
-	if (steps % 2 == 0)
-	{
-		/* continue */
-	}
-	else
-	{
-		/* wrong param */
-		printf("Given steps are not even\n");
-		exit(2);
-	}
+/*
+*	if (steps % 2 == 0)
+*	{
+*		continue;
+*	}
+*	else
+*	{
+*		printf("Given steps are not even\n");
+*		exit(2);
+*	}
+*/
 
-/* first term by one */
-sum = 1 * f(a) + f(b);
-/* sum all except first and last */
+/* first member is 0 */
+
 	for (i = 1; i <= steps - 1; i++)
 	{
-		/* height as simpson rules */
 		h = a + i * width;
-		if (even)
+		if (i % 2 == 0)
 		{
-			/* if even */
 			sum += 2 * f(h);
 		}
 		else
 		{
-			/* if odd */
 			sum += 4 * f(h);
 		}
 	}
-/* end term by one */
-sum += 1 * f(h);
-/* term */
+/* last member */
+sum += 1 * f(a) + f(b);
 sum = sum * (width / 3);
 
 return (sum);
