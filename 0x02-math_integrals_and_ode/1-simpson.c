@@ -4,8 +4,10 @@
 * Date: August 21, 2021
 */
 
+#define f(x) (1 / (1 + x * x))
+
 /**
-* rectangle_method - rectangle_method
+* simpson - simpson_method
 * @a: double
 * @b: double
 * @steps: int
@@ -19,11 +21,10 @@ int i;
 
 sum = 0.0;
 width = (b - a) / steps;
-/* aprox */
-/* dx / 1 + x^2 */
-/* 1-4-1 */
+/* 1 - 4 - 1 */
+/* 1 - 4 - 2 - 4 - 2 - 1 */
 /* check that steps is even */
-	if (steps % 10 == 0)
+	if (steps % 2 == 0)
 	{
 		/* continue */
 	}
@@ -34,12 +35,28 @@ width = (b - a) / steps;
 		exit(2);
 	}
 
+/* first term by one */
+sum = 1 * f(a) + f(b);
+/* sum all except first and last */
+	for (i = 1; i <= steps - 1; i++)
+	{
+		/* height as simpson rules */
+		h = a + i * width;
+		if (even)
+		{
+			/* if even */
+			sum += 2 * f(h);
+		}
+		else
+		{
+			/* if odd */
+			sum += 4 * f(h);
+		}
+	}
+/* end term by one */
+sum += 1 * f(h);
+/* term */
+sum = sum * (width / 3);
 
-for (i = 1; i <= steps; i++)
-{
-/* height = simpson rules */
-area = width * height;
-sum += area;
-}
 return (sum);
 }
