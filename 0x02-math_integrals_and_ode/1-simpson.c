@@ -14,5 +14,19 @@
 
 double simpson(double a, double b, int steps)
 {
+double sum;
+int i;
+
+sum = 0.0;
+width = (b - a) / steps;
 /* aprox */
+/* dx / 1 + x^2 */
+/* 1-4-1 */
+for (i = 1; i <= steps; i++)
+{
+/* height = simpson rules */
+area = width * height;
+sum += area;
+}
+return (sum);
 }
