@@ -17,29 +17,22 @@
 
 double rectangle_method(double a, double b, int steps)
 {
-/* aprox */
-/* b - a / steps = width of rectangle */
-/* area of rectangle = width * height */
-/* sum of rectangles = aprox of area under curve */
-/* height = value of function at the start of the interval */
-/* height = f(a) first case */
-/* height-n = f(a + (i-1) * width) next cases */
-/* area = width * (f(a + (i - 1) * width)) */
-/* create a sum of all areas */
-/* 1 + x^2 */
-/* atan */
-/* (1 / 1 + x^2) dx = arctan(x) */
 
 int i;
-double width, sum;
+double width, height, sum, w;
 
-/* steps = 5; */
 width = (b - a) / steps;
 sum = 0.0;
+w = a;
 
 	for (i = 1; i <= steps; i++)
 	{
-		sum += ((1 / (1 + (width * width))) * atan(a - 1)) * width * -1;
+		/* in terms of width */
+		height = 1 / (1 + (w * w));
+		/* of all areas */
+		sum += width * height;
+		/* change in width */
+		w += width;
 	}
 
 return (sum);
