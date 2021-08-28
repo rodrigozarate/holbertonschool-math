@@ -22,6 +22,19 @@ width = (b - a) / steps;
 /* aprox */
 /* dx / 1 + x^2 */
 /* 1-4-1 */
+/* check that steps is even */
+	if (steps % 10 == 0)
+	{
+		/* continue */
+	}
+	else
+	{
+		/* wrong param */
+		printf("Given steps are not even\n");
+		exit(2);
+	}
+
+
 for (i = 1; i <= steps; i++)
 {
 /* height = simpson rules */
