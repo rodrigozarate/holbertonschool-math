@@ -14,9 +14,11 @@
 
 double euler_method(double a, double b, int steps)
 {
-/* aprox */
+/* same file to plot the pendulum ??? */
 /* EULER */
 /* ODE u''(x) = - sin(u(x() */
 /* u(0) = 0 */
 /* u'(0) = 1 */
+/* out to dat file */
+/* run gunplot from command line?? */
 }
