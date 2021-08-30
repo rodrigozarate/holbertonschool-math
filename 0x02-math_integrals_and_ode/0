@@ -4,6 +4,8 @@
 * Date: August 21, 2021
 */
 
+#include <math.h>
+
 /**
 * euler_method - euler_method
 * @a: double
@@ -16,9 +18,13 @@ double euler_method(double a, double b, int steps)
 {
 /* same file to plot the pendulum ??? */
 /* EULER */
-/* ODE u''(x) = - sin(u(x() */
+/* ODE u''(x) = - sin(u(x)) */
 /* u(0) = 0 */
 /* u'(0) = 1 */
+/* Yn + 1 = Yn + h f'(x);
 /* out to dat file */
 /* run gunplot from command line?? */
+/* x		x'		dy/dx */
+/* 0		1		- sin(u(0)) -> -sin(0) */
+/* x+width	1+(-sin(0))	- sin(u(x+width)) */
 }
