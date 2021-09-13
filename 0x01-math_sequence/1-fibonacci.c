@@ -16,7 +16,7 @@ t_cell *Fibonnaci()
 double goldn = 1.618034;
 double togold = 2;
 int mflag = 1;
-double diff = 0.00000001, oper;
+double diff = 0.00000005, oper;
 t_cell *prevnode, *preprevnode, *tempnode, *fibon;
 
 fibon = malloc(sizeof(t_cell));
