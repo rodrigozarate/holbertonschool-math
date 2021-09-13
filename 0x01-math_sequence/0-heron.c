@@ -4,6 +4,7 @@
 * Date: August 06, 2021
 */
 
+#include <math.h>
 #include "heron.h"
 
 /**
