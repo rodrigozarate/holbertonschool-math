@@ -57,7 +57,15 @@ t_cell *heron(double p, double x0)
 {
 t_cell *thenode = NULL, *list;
 double value = x0;
-double comp = sqrt(p);
+double comp = p / 2;
+double aprox = 0;
+
+	while (comp != aprox)
+	{
+	/* another way of do the heron */
+		aprox = comp;
+		comp = (p / aprox + aprox) / 2;
+	}
 
 /* iterate over value */
 	while (comp != value)
