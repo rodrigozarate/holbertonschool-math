@@ -50,7 +50,10 @@ This command will create a file named mandelbrot.pgm in the current directory
 
 #### File: mandelbrot.c
 
-![Mandelbrot's set](https://www.researchgate.net/profile/John-Hubbard-6/publication/228540477/figure/fig1/AS:669410264088623@1536611252979/The-Mandelbrot-set-M-The-two-main-conjectures-are-the-following-MLC-The-set-M-is.png)
+![Mandelbrot's set pgm](https://github.com/rodrigozarate/holbertonschool-math/blob/main/0x01-math_sequence/mandelbrot.pgm)
+
+![Mandelbrot's set png](https://github.com/rodrigozarate/holbertonschool-math/blob/main/0x01-math_sequence/mandelbrot.png)
+
 
 ### 3. Julia’s Sets
 
@@ -75,6 +78,4 @@ This command will create a file named julia.pgm in the current directory
 
 ![Julia](https://mathpng.com/wp-content/uploads/2021/07/gren_13.png)
 
-#### Why I'm here
-Don't know...
 
